@@ -6,8 +6,11 @@ let answer = "";
 
 for(let i = 0; i < input.length - 1; i++) {
     input[i] = input[i].toLowerCase();
-    let count = input[i].match(reg).length;
-    answer += count + "\n";
+    if(input[i].match(reg) != null) {
+        answer += input[i].match(reg).length + "\n";
+    } else {
+        answer += 0 + "\n";
+    }
 }
 
 console.log(answer);
