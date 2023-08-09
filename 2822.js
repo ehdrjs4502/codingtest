@@ -6,7 +6,6 @@ let topArr = []
 let total = 0
 let numArr = []
 
-
 // Map으로 key: 점수, value: 문제 번호 저장
 for(let i = 0; i < input.length; i++) {
     map.set(input[i],i+1 )
