@@ -10,13 +10,7 @@ let result = ''
 
 // 상근이가 가지고 있는 카드 중 찾는 카드가 있는 지 확인해서 있으면 1 없으면 0
 for(let i = 0; i < M; i++) {
-    if(myCards.has(cards[i])) {
-        result += 1 + ' '
-    }
-
-    else {
-        result += 0 + ' '
-    }
+    myCards.has(cards[i]) === true ? result += 1 + ' ' : result += 0 + ' '
 }
 
 console.log(result)
