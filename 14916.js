@@ -10,3 +10,5 @@ while (num > 0) {
     cnt++;
     num -= 2;
 }
+
+console.log(-1);
