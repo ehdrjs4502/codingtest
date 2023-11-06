@@ -1,4 +1,4 @@
-const fs = require('fs');
-const input = fs.readFileSync("./input/1543.txt").toString().trim().split('\n')
+const fs = require("fs");
+const input = fs.readFileSync("./input/1543.txt").toString().trim().split("\n");
 
-console.log(input)
+console.log(input);
