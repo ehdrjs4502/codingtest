@@ -5,6 +5,14 @@ let [H, M] = input.split(" ");
 
 if (M - 45 < 0) {
     M = 60 + (M - 45);
+
+    if (H == 0) {
+        H = 23;
+    } else {
+        H--;
+    }
+} else {
+    M = M - 45;
 }
 
-console.log(M);
+console.log(H, M);
