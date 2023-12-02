@@ -1,9 +1,11 @@
-    const fs = require('fs');
-    const input = fs.readFileSync("./input/11004.txt").toString().trim().split("\n");
-    const idx = input[0].split(' ')[1];
+const fs = require("fs");
+const input = fs.readFileSync("./input/11004.txt").toString().trim().split("\n");
+const idx = input[0].split(" ")[1];
 
-    let num = input[1].split(' ').sort((a, b) => {
-        return a - b;
-    });
+let arr = input[1].split(" ").map(Number);
 
-    console.log(num[idx - 1]);
+arr.sort((a, b) => {
+  return a - b;
+});
+
+console.log(arr[idx - 1]);
