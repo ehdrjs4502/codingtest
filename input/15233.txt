@@ -1,4 +1,3 @@
-3 3 4
-messi neymar suarez
-ronaldo bale james
-bale messi ronaldo suarez
+3 3 0
+메시 네이마르 수아레즈
+호날두 베일 제임스
