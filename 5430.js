@@ -27,6 +27,7 @@ for (let i = 0; i < t; i++) {
         break;
       }
       if (isReverse) {
+        1380;
         arr.pop();
       } else {
         arr.shift();
