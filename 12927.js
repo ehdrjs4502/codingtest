@@ -5,7 +5,7 @@ if (input.split("").every((value) => value === "N")) return console.log(0);
 
 let arr = input.split("");
 let result = 0;
-arr.splice(0, 0, "N");
+arr.unshift("N");
 
 for (let i = 1; i < arr.length; i++) {
   if (arr[i] === "Y") {
