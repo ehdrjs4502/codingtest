@@ -1,11 +1,18 @@
-const fs = require('fs');
+const fs = require("fs");
 const input = fs.readFileSync("./input/9935.txt").toString().trim().split("\n");
 
-let str = input[0];
-let bomb = input[1];
+let str = input.shift();
+let bomb = input.shift();
+const stack = [];
 
-while(str.includes(bomb)) {
-    str = str.replaceAll(bomb, "");
+for (let i = 0; i < str.length; i++) {
+  stack.push(str[i]);
+
+  if (str[i] === bomb[bomb.length - 1]) {
+    if (stack.slice(-bomb.length).join("") === bomb) {
+      stack.splice(-bomb.length);
+    }
+  }
 }
 
-console.log(str.length == 0 ? "FRULA" : str);
+console.log(stack.length ? stack.join("") : "FRULA");
