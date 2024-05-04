@@ -16,6 +16,21 @@ const dfs = (start) => {
   }
 };
 
+const bfs = (start) => {
+  const queue = [start];
+
+  while (queue.length) {
+    let now = queue.shift();
+    for (let next of graph[now]) {
+      if (!visited[next]) {
+        visited[next] = true;
+        queue.push(next);
+        result++;
+      }
+    }
+  }
+};
+
 const n = Number(input.shift());
 input.shift();
 let result = 0;
@@ -31,6 +46,7 @@ input.forEach((value) => {
 
 // 1이 숙주니까 미리 빼줌
 visited[1] = true;
-dfs(1);
+// dfs(1);
+bfs(1);
 
 console.log(result);
