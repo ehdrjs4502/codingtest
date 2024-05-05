@@ -19,11 +19,10 @@ let countArr = [];
 
 const bfs = (y, x) => {
   const queue = [[y, x]];
-  let isOne = true;
-  let count = 0;
+  let count = 1;
+  arr[y][x] = 0;
   while (queue.length) {
     const [nowY, nowX] = queue.shift();
-
     for (let i = 0; i < 4; i++) {
       const nextY = nowY + move[i][1];
       const nextX = nowX + move[i][0];
@@ -32,11 +31,10 @@ const bfs = (y, x) => {
         arr[nextY][nextX] = 0;
         queue.push([nextY, nextX]);
         count++;
-        isOne = false;
       }
     }
   }
-  countArr.push(isOne ? count + 1 : count);
+  countArr.push(count);
 };
 
 for (let i = 0; i < n; i++) {
