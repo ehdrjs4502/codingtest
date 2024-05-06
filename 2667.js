@@ -23,6 +23,7 @@ const bfs = (y, x) => {
   arr[y][x] = 0;
   while (queue.length) {
     const [nowY, nowX] = queue.shift();
+
     for (let i = 0; i < 4; i++) {
       const nextY = nowY + move[i][1];
       const nextX = nowX + move[i][0];
