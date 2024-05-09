@@ -37,7 +37,7 @@ const bfs = (start) => {
 };
 
 bfs(x);
-
+console.log(visited);
 if (result.length) {
   console.log(result.sort((a, b) => a - b).join("\n"));
 } else {
