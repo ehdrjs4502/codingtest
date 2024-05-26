@@ -19,8 +19,6 @@ while (end <= n) {
   } else {
     sum += arr[end++];
   }
-
-  console.log(arr[start], arr[end]);
 }
 
-console.log(arr);
+console.log(result);
