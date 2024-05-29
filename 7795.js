@@ -1,42 +1,34 @@
-const readline = require("./input.7795.txt");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const fs = require("fs");
+const input = fs.readFileSync("./input/7795.txt").toString().trim().split("\n");
 
-const input = [];
-rl.on("line", function (line) {
-  input.push(line);
-}).on("close", function () {
-  const T = parseInt(input[0]);
-  let index = 1;
-  for (let _ = 0; _ < T; _++) {
-    const [n, m] = input[index].split(" ").map(Number);
-    const a = input[index + 1]
-      .split(" ")
-      .map(Number)
-      .sort((a, b) => a - b);
-    const b = input[index + 2]
-      .split(" ")
-      .map(Number)
-      .sort((a, b) => a - b);
-    index += 3;
+const t = input.shift();
 
-    let count = 0;
-    let result = 0;
+for (a of t) {
+  const [n, m] = input.shift().split(" ").map(Number);
+  const a = input
+    .shift()
+    .split(" ")
+    .map(Number)
+    .sort((a, b) => a - b);
 
-    for (let i = 0; i < n; i++) {
-      while (true) {
-        if (count === m || a[i] <= b[count]) {
-          result += count;
-          break;
-        } else {
-          count++;
-        }
-      }
+  const b = input
+    .shift()
+    .split(" ")
+    .map(Number)
+    .sort((a, b) => a - b);
+
+  let aIndex = 0;
+  let bIndex = 0;
+  let result = 0;
+
+  while (aIndex < n) {
+    if (a[aIndex] > b[bIndex]) {
+      bIndex++;
+    } else {
+      result += bIndex;
+      aIndex++;
     }
-
-    console.log(result);
   }
-  process.exit();
-});
+
+  console.log(result);
+}
