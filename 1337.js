@@ -1,22 +1,20 @@
-const fs = require('fs');
+const fs = require("fs");
 const input = fs.readFileSync("./input/1337.txt").toString().trim().split("\n");
 
-function solution(input) {
-    input.shift();
-    let arr = input.map((x) => Number(x));
-    let count = 0;
+const n = +input.shift();
+let arr = input.map(Number).sort((a, b) => a - b);
+const MAX = 5;
+let result = 4;
+let start = 0;
+let end = 0;
 
-    arr.sort((a, b) => {
-        return a - b;
-    });
-
-    for(let i = 0; i < arr.length; i++) {
-        for(let j = 1; j <= 5; j++) {
-            
-        }
-    }
-
-    return count;
+while (end < n) {
+  if (arr[end] - arr[start] < MAX) {
+    end++;
+    result = Math.min(result, MAX - (end - start));
+  } else {
+    start++;
+  }
 }
 
-console.log(solution(input));
+console.log(result);
