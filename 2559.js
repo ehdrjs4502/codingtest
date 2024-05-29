@@ -12,9 +12,8 @@ for (let i = 0; i < k; i++) {
 
 let result = sum;
 
-for (let i = k; i < n; i++) {
-  sum += arr[i];
-  sum -= arr[i - k];
+for (let i = 1; i < n - k + 1; i++) {
+  sum = sum - arr[i - 1] + arr[i + k - 1];
   result = Math.max(result, sum);
 }
 
